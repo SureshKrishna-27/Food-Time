@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <title>Online Food Delivery</title>
+</head>
+<body>
+
+<!--sidebar-->
+<div class="sidebar">
+    <!--logo-->
+    <h1 class="logo">FoodTime</h1>
+    <!--list of menus-->
+    <div class="sidebar-menus">
+        <a href="#"><ion-icon name="storefront-outline"></ion-icon>Home</a>
+        <a href="#"><ion-icon name="receipt-outline"></ion-icon>Bills</a>
+        <a href="#"><ion-icon name="wallet-outline"></ion-icon>Wallet</a>
+        <a href="#"><ion-icon name="notifications-outline"></ion-icon>Notifications</a>
+        <a href="#"><ion-icon name="chatbubbles-outline"></ion-icon>Contact Us</a>
+        <a href="#"><ion-icon name="settings-outline"></ion-icon>Setting</a>
+    </div>
+    <!--logout-->
+    <div class="sidebar-logout">
+        <a href="#"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+    </div>
+</div>   
+<!--main--> 
+<div class="main">
+    <!--main navbar-->
+    <div class="main-navbar">
+        <ion-icon class="menu-toggle" name ="menu-outline"></ion-icon>
+        <!--search bar-->
+        <div class="search">
+            <input type="text" placeholder="What you want to eat ?">
+            <button class="search-btn">Search</button>
+        </div>
+        <!---profile icon on left side nav bar-->
+        <div class="profile">
+            <a class ="cart" href="#" onclick="toggleCartPopup()"><ion-icon name="cart"></ion-icon>
+            <span id="cart-count" class="cart-count">0</span></a>
+            <a class ="user"href="#"><ion-icon name="person-outline"></ion-icon></a>
+
+        </div>
+    </div>
+    <!--shopping cart section-->
+    <div class="cart-popup" id="cart-popup">
+        <h4>Shopping Cart</h4>
+        <table id="cart-items">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>#</th>
+                    <th>Price($)</th>
+                    <th>Total($)</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <p>Total($) <span id="cart-total">0.00</span></p>
+        <a href="#" class="cart-close" onclick="closeCart()"> <ion-icon name ="close-circle-outline"></ion-icon></a>
+    </div>
+        <!--main highlight-->
+        <div class="main-highlight">
+            <!--tittle section and arrow-->
+            <div class="main-header">
+                <h2 class="main-title">Recommendations</h2>
+                <div class="main-arrow">
+                    <ion-icon class="back" name ="chevron-back-circle-outline"></ion-icon>
+                    <ion-icon class="next" name ="chevron-forward-circle-outline"></ion-icon>
+                </div>
+                </div>
+                <!--highlight menu-->
+                <div class="highlight-wrapper">
+                    <div class="highlight-card">
+                        <img src="https://cdn.pixabay.com/photo/2016/03/17/23/30/salad-1264107_1280.jpg" alt="" class="highlight-img">
+                        <div class="highlight-desc">
+                            <h4>Fresh Salad</h4>
+                            <p>$45.40</p>
+                            
+                        </div>
+                    </div>
+                    <div class="highlight-card">
+                        <img src="https://cdn.pixabay.com/photo/2020/03/20/20/49/coffe-4951985_1280.jpg" alt="" class="highlight-img">
+                        <div class="highlight-desc">
+                            <h4>Coffe Lotte</h4>
+                            <p>$25.00</p>
+                        </div>
+                    </div>
+                    <div class="highlight-card">
+                        <img src="https://cdn.pixabay.com/photo/2017/05/07/08/56/pancakes-2291908_1280.jpg" alt="" class="highlight-img">
+                        <div class="highlight-desc">
+                            <h4>Pancakes</h4>
+                            <p>$65.70</p>
+                        </div>
+                    </div>
+                    <div class="highlight-card">
+                        <img src="https://cdn.pixabay.com/photo/2022/07/15/18/12/cheese-burger-7323674_1280.jpg" alt="" class="highlight-img">
+                        <div class="highlight-desc">
+                            <h4>Cheese Burger</h4>
+                            <p>$145.00</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        
+        <!--main menus / orders-->
+        <div class="main-menus">
+            <!--filter section-->
+            <div class="main-filter">
+                <div>
+                    <h2 class="main-title">Menu <br>Category</h2>
+                    <div class="main-arrow">
+                        <ion-icon class="back-menus" name ="chevron-back-circle-outline"></ion-icon>
+                        <ion-icon class="next-menus" name ="chevron-forward-circle-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="filter-wrapper">
+                    <div class="filter-card">
+                        <div class="filter-icon">
+                            <ion-icon name ="restaurant-outline"></ion-icon>
+                        </div>
+                        <p>All Menu</p>
+                    </div>
+                    <div class="filter-card">
+                        <div class="filter-icon">
+                            <ion-icon name ="fast-food-outline"></ion-icon>
+                        </div>
+                        <p>Burger</p>
+                    </div>
+                    <div class="filter-card">
+                        <div class="filter-icon">
+                            <ion-icon name ="pizza-outline"></ion-icon>
+                        </div>
+                        <p>Pizza</p>
+                    </div>
+                    <div class="filter-card">
+                        <div class="filter-icon">
+                            <ion-icon name ="wine-outline"></ion-icon>
+                        </div>
+                        <p>Wine</p>
+                    </div>
+                    <div class="filter-card">
+                        <div class="filter-icon">
+                            <ion-icon name ="ice-cream-outline"></ion-icon>
+                        </div>
+                        <p>Ice Cream</p>
+                    </div>
+                    <div class="filter-card">
+                        <div class="filter-icon">
+                            <ion-icon name ="cafe-outline"></ion-icon>
+                        </div>
+                        <p>Coffee</p>
+                    </div>
+                    <div class="filter-card">
+                        <div class="filter-icon">
+                            <ion-icon name ="fish-outline"></ion-icon>
+                        </div>
+                        <p>Seafood</p>
+                    </div>
+                    <div class="filter-card">
+                        <div class="filter-icon">
+                            <ion-icon name ="nutrition-outline"></ion-icon>
+                        </div>
+                        <p>Healthy</p>
+                    </div>
+                </div>
+            </div>
+            <hr class="divider">
+            <div class="main-detail">
+                <h2 class="main-title">Choose Order</h2>
+                <div class="detail-wrapper">
+                    <div class="detail-card">
+                        <img src="https://cdn.pixabay.com/photo/2015/04/08/13/13/food-712665_1280.jpg" alt="" class="detail-img">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Salmon teriyaki</h4>
+                                <p class="detail-sub">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <p class="price">$156.80</p>
+                                <button class="add-to-cart" onclick="addToCart('salmon teriyaki',156.80)">Add to cart</button>
+                            </div>
+                            <ion-icon class="detail-favorites " name="bookmark-outline"></ion-icon>
+
+                        </div>
+                        
+                    </div>
+                    <div class="detail-card">
+                        <img src="https://cdn.pixabay.com/photo/2020/05/17/04/22/pizza-5179939_1280.jpg" alt="" class="detail-img">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Pizza</h4>
+                                <p class="detail-sub">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <p class="price">$59.90</p>
+                                <button class="add-to-cart" onclick="addToCart('Pizza',59.90)">Add to cart</button>
+                            </div>
+                            <ion-icon class="detail-favorites " name="bookmark-outline"></ion-icon>
+
+                        </div>
+                        
+                    </div>
+                    <div class="detail-card">
+                        <img src="https://cdn.pixabay.com/photo/2017/10/31/17/00/still-life-2905834_1280.jpg" alt="" class="detail-img">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Wine</h4>
+                                <p class="detail-sub">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <p class="price">$15.00</p>
+                                <button class="add-to-cart" onclick="addToCart('Wine',15.00)">Add to cart</button>
+                            </div>
+                            <ion-icon class="detail-favorites " name="bookmark-outline"></ion-icon>
+
+                        </div>
+                        
+                    </div>
+                    <div class="detail-card">
+                        <img src="https://cdn.pixabay.com/photo/2024/05/06/16/58/burger-8743791_1280.jpg" alt="" class="detail-img">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Burger</h4>
+                                <p class="detail-sub">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <p class="price">$46.00</p>
+                                <button class="add-to-cart" onclick="addToCart('Burger',46.00)">Add to cart</button>
+                            </div>
+                            <ion-icon class="detail-favorites " name="bookmark-outline"></ion-icon>
+
+                        </div>
+                        
+                    </div>
+                    <div class="detail-card">
+                        <img src="https://cdn.pixabay.com/photo/2020/03/07/05/18/coffee-4908764_1280.jpg" alt="" class="detail-img">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Coffee</h4>
+                                <p class="detail-sub">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <p class="price">$15.00</p>
+                                <button class="add-to-cart" onclick="addToCart('Coffee',15.00)">Add to cart</button>
+                            </div>
+                            <ion-icon class="detail-favorites " name="bookmark-outline"></ion-icon>
+
+                        </div>
+                        
+                    </div>
+                    <div class="detail-card">
+                        <img src="https://cdn.pixabay.com/photo/2015/11/08/07/37/eat-1033210_1280.jpg" alt="" class="detail-img">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Salad</h4>
+                                <p class="detail-sub">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <p class="price">$55.00</p>
+                                <button class="add-to-cart" onclick="addToCart('Salad',55.00)">Add to cart</button>
+                            </div>
+                            <ion-icon class="detail-favorites " name="bookmark-outline"></ion-icon>
+
+                        </div>
+                        
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+
+    
+</div>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="app.js"></script>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<!---adding javascript-->
+
+</html>
